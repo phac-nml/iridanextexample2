@@ -1,5 +1,5 @@
 name: nf-core branch protection
-# This workflow is triggered on PRs to `main`/`main` branch on the repository
+# This workflow is triggered on PRs to `main`/`master` branch on the repository
 # It fails when someone tries to make a PR against the nf-core `main`/`main` branch instead of `dev`
 on:
   pull_request_target:
@@ -11,7 +11,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      # PRs to the nf-core repo main/main branch are only ok if coming from the nf-core repo `dev` or any `patch` branches
+      # PRs to the nf-core repo main/master branch are only ok if coming from the nf-core repo `dev` or any `patch` branches
       - name: Check PRs
         if: github.repository == 'phac-nml/iridanextexample2'
         run: |
