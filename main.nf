@@ -1,9 +1,9 @@
 #!/usr/bin/env nextflow
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    phac-nml/iridanextexampleschema
+    phac-nml/iridanextexample2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Github : https://github.com/phac-nml/iridanextexampleschema
+    Github : https://github.com/phac-nml/iridanextexample2
 ----------------------------------------------------------------------------------------
 */
 
@@ -13,10 +13,10 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { IRIDANEXTEXAMPLESCHEMA  } from './workflows/iridanextexampleschema'
-include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_iridanextexampleschema_pipeline'
-include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_iridanextexampleschema_pipeline'
-include { getGenomeAttribute      } from './subworkflows/local/utils_nfcore_iridanextexampleschema_pipeline'
+include { iridanextexample2  } from './workflows/iridanextexample2'
+include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_iridanextexample2_pipeline'
+include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_iridanextexample2_pipeline'
+include { getGenomeAttribute      } from './subworkflows/local/utils_nfcore_iridanextexample2_pipeline'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,7 +38,7 @@ params.fasta = getGenomeAttribute('fasta')
 //
 // WORKFLOW: Run main analysis pipeline depending on type of input
 //
-workflow PHACNML_IRIDANEXTEXAMPLESCHEMA {
+workflow PHACNML_iridanextexample2 {
 
     take:
     samplesheet // channel: samplesheet read in from --input
@@ -48,11 +48,11 @@ workflow PHACNML_IRIDANEXTEXAMPLESCHEMA {
     //
     // WORKFLOW: Run pipeline
     //
-    IRIDANEXTEXAMPLESCHEMA (
+    iridanextexample2 (
         samplesheet
     )
     emit:
-    multiqc_report = IRIDANEXTEXAMPLESCHEMA.out.multiqc_report // channel: /path/to/multiqc_report.html
+    multiqc_report = iridanextexample2.out.multiqc_report // channel: /path/to/multiqc_report.html
 }
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,7 +78,7 @@ workflow {
     //
     // WORKFLOW: Run main workflow
     //
-    PHACNML_IRIDANEXTEXAMPLESCHEMA (
+    PHACNML_iridanextexample2 (
         PIPELINE_INITIALISATION.out.samplesheet
     )
     //
@@ -91,7 +91,7 @@ workflow {
         params.outdir,
         params.monochrome_logs,
         params.hook_url,
-        PHACNML_IRIDANEXTEXAMPLESCHEMA.out.multiqc_report
+        PHACNML_iridanextexample2.out.multiqc_report
     )
 }
 
