@@ -14,7 +14,7 @@ on:
   pull_request:
     branches:
       - main
-      - main
+      - master
 
 env:
   NXF_ANSI_LOG: false
