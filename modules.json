@@ -1,6 +1,6 @@
 {
-    "name": "phac-nml/iridanextexampleschema",
-    "homePage": "https://github.com/phac-nml/iridanextexampleschema",
+    "name": "phac-nml/iridanextexample2",
+    "homePage": "https://github.com/phac-nml/iridanextexample2",
     "repos": {
         "https://github.com/nf-core/modules.git": {
             "modules": {
