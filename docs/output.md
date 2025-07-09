@@ -1,4 +1,4 @@
-# phac-nml/iridanextexample2: Output
+# phac-nml/iridanextexampleschema: Output
 
 ## Introduction
 

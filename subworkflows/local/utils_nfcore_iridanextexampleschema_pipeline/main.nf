@@ -1,5 +1,5 @@
 //
-// Subworkflow with functionality specific to the phac-nml/iridanextexample2 pipeline
+// Subworkflow with functionality specific to the phac-nml/iridanextexampleschema pipeline
 //
 
 /*

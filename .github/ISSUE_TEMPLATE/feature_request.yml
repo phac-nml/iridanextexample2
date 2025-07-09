@@ -1,5 +1,5 @@
 name: Feature request
-description: Suggest an idea for the phac-nml/iridanextexample2 pipeline
+description: Suggest an idea for the phac-nml/iridanextexampleschema pipeline
 labels: enhancement
 body:
   - type: textarea

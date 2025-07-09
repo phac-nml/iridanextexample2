@@ -1,6 +1,6 @@
-# phac-nml/iridanextexample2: Documentation
+# phac-nml/iridanextexampleschema: Documentation
 
-The phac-nml/iridanextexample2 documentation is split into the following pages:
+The phac-nml/iridanextexampleschema documentation is split into the following pages:
 
 - [Usage](usage.md)
   - An overview of how the pipeline works, how to run it and a description of all of the different command-line flags.
