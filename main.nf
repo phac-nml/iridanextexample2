@@ -14,9 +14,9 @@
 */
 
 include { iridanextexample2  } from './workflows/iridanextexample2'
-include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_iridanextexample2_pipeline'
-include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_iridanextexample2_pipeline'
-include { getGenomeAttribute      } from './subworkflows/local/utils_nfcore_iridanextexample2_pipeline'
+include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_iridanextexample2'
+include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_iridanextexample2'
+include { getGenomeAttribute      } from './subworkflows/local/utils_iridanextexample2'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

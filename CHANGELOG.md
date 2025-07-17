@@ -7,14 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release of phac-nml/iridanextexample2, created with the [nf-core](https://nf-co.re/) template.
 - Updated nf-core template:
-    - Change the pipeline name to `iridanextexample2` which does not comply with nf-core standard. [PR #1](https://github.com/phac-nml/iridanextexample2/pull/1)
-    - Swap `master` for `main` for branch name. [PR #1](https://github.com/phac-nml/iridanextexample2/pull/1)
-        - .github/workflows `linting.yml` and `branch.yml` deviate from template
-
-### `Added`
-
-### `Fixed`
-
-### `Dependencies`
-
-### `Deprecated`
+  - Change the pipeline name to `iridanextexample2` which does not comply with nf-core standard. [PR #1](https://github.com/phac-nml/iridanextexample2/pull/1)
+  - Swap `master` for `main` for branch name. [PR #1](https://github.com/phac-nml/iridanextexample2/pull/1)
+    - .github/workflows `linting.yml` and `branch.yml` deviate from template
+- Remove nf-core branding (for external use) following [nf-core guidelines](https://nf-co.re/docs/guidelines/external_use). [PR #2](https://github.com/phac-nml/iridanextexample2/pull/2)
+  - Left some links to nf-core documentation and github actions
+  - Githubactions now pass. Including making test `--profile test,conda` to fix issue with tests.
