@@ -32,7 +32,7 @@ workflow UTILS_NFSCHEMA_PLUGIN {
     // Validate the parameters using nextflow_schema.json or the schema
     // given via the validation.parametersSchema configuration option
     //
-    /*
+
     if(validate_params) {
         if(parameters_schema) {
             validateParameters(parameters_schema:parameters_schema)
@@ -43,6 +43,6 @@ workflow UTILS_NFSCHEMA_PLUGIN {
 
     emit:
     dummy_emit = true
-    */
+
 }
 
