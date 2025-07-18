@@ -24,4 +24,5 @@ repos:
               modules/nf-core/.*|
               subworkflows/nf-core/.*|
               .*\.snap$
+              conf/iridanext.config
           )$
