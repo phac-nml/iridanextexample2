@@ -13,4 +13,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove nf-core branding (for external use) following [nf-core guidelines](https://nf-co.re/docs/guidelines/external_use). [PR #2](https://github.com/phac-nml/iridanextexample2/pull/2)
   - Left some links to nf-core documentation and github actions
   - Githubactions now pass. Including making test `--profile test,conda` to fix issue with tests.
-- Added [nf-iridanext plugin](https://github.com/phac-nml/nf-iridanext) to pipeline. [PR](unlinked)
+- Added [nf-iridanext plugin](https://github.com/phac-nml/nf-iridanext) to pipeline. [PR #3](https://github.com/phac-nml/iridanextexample2/pull/3)
