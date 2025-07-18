@@ -11,4 +11,4 @@ testing*
 *.pyc
 bin/
 ro-crate-metadata.json
-conf/iridanext.config
+/conf/iridanext.config
