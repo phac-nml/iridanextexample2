@@ -17,11 +17,3 @@ repos:
               subworkflows/nf-core/.*|
               .*\.snap$
           )$
-      - id: end-of-file-fixer
-        exclude: |
-          (?x)^(
-              .*ro-crate-metadata.json$|
-              modules/nf-core/.*|
-              subworkflows/nf-core/.*|
-              .*\.snap$
-          )$

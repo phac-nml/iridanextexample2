@@ -4,8 +4,7 @@ nextflow_pipeline {
     script "../main.nf"
     tag "pipeline"
 
-    test("-profile test,conda") { // Was having an issue with fastqc not being found in the conda environment, so added conda profile to the test command
-
+    test("-profile test,docker") { // Was having an issue with fastqc not being found in the test environment, so added docker to the test profile
         when {
             params {
                 outdir = "$outputDir"
@@ -30,6 +29,29 @@ nextflow_pipeline {
                     stable_path
                 ).match() }
             )
+        }
+
+    }
+
+    test("Check iridanext output") {
+        tag "iridanext_output"
+        when {
+            params {
+                outdir = "$outputDir"
+            }
+        }
+
+        then {
+            // Check that the iridanext output file exists and is gzipped
+            def iridanextOutput = path("$outputDir/iridanext.output.json").json
+
+            // Check contents of the iridanext output file
+            def iridanext_samples = iridanextOutput.files.samples
+            assert iridanext_samples.size() > 0
+            assert iridanext_samples.SAMPLE2_PE == [['path':'fastqc/SAMPLE2_PE_2_fastqc.html'], ['path':'fastqc/SAMPLE2_PE_1_fastqc.html']]
+            assert iridanext_samples.SAMPLE3_SE == [['path':'fastqc/SAMPLE3_SE_2_fastqc.html'], ['path':'fastqc/SAMPLE3_SE_1_fastqc.html']]
+            assert iridanext_samples.SAMPLE1_PE == [['path':'fastqc/SAMPLE1_PE_2_fastqc.html'], ['path':'fastqc/SAMPLE1_PE_1_fastqc.html']]
+
         }
     }
 }
