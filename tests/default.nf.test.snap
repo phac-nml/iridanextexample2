@@ -24,7 +24,7 @@
                 "fastqc/SAMPLE3_SE_1_fastqc.zip",
                 "fastqc/SAMPLE3_SE_2_fastqc.html",
                 "fastqc/SAMPLE3_SE_2_fastqc.zip",
-                "iridanext.output.json.gz",
+                "iridanext.output.json",
                 "multiqc",
                 "multiqc/multiqc_data",
                 "multiqc/multiqc_data/BETA-multiqc.parquet",
@@ -91,6 +91,7 @@
                 "pipeline_info/iridanextexample2_software_mqc_versions.yml"
             ],
             [
+                "iridanext.output.json:md5,4b2ec8e152163258140340455ba9f5ea",
                 "fastqc-status-check-heatmap.txt:md5,0f1975c565a16bf09be08a05c204ded7",
                 "fastqc_overrepresented_sequences_plot.txt:md5,4b23cea39c4e23deef6b97810bc1ee46",
                 "fastqc_per_base_n_content_plot.txt:md5,037692101c0130c72493d3bbfa3afac1",
@@ -110,7 +111,7 @@
             "nf-test": "0.9.0",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-07-21T09:23:26.690808343"
+        "timestamp": "2025-07-21T10:10:45.271659978"
     },
     "-profile test": {
         "content": [
