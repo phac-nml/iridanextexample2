@@ -91,7 +91,7 @@
                 "pipeline_info/iridanextexample2_software_mqc_versions.yml"
             ],
             [
-                "iridanext.output.json:md5,4b2ec8e152163258140340455ba9f5ea",
+                "iridanext.output.json:md5,c1dafd1c645dc357d4f804284a9dd2b9",
                 "fastqc-status-check-heatmap.txt:md5,0f1975c565a16bf09be08a05c204ded7",
                 "fastqc_overrepresented_sequences_plot.txt:md5,4b23cea39c4e23deef6b97810bc1ee46",
                 "fastqc_per_base_n_content_plot.txt:md5,037692101c0130c72493d3bbfa3afac1",
@@ -111,7 +111,7 @@
             "nf-test": "0.9.0",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-07-21T10:10:45.271659978"
+        "timestamp": "2025-07-21T10:21:28.642083439"
     },
     "-profile test": {
         "content": [
