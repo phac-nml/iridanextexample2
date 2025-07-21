@@ -4,7 +4,7 @@ nextflow_pipeline {
     script "../main.nf"
     tag "pipeline"
 
-    test("-profile test,conda") { // Was having an issue with fastqc not being found in the conda environment, so added conda profile to the test command
+    test("-profile test,docker") { // Was having an issue with fastqc not being found in the docker environment, so added docker profile to the test command
 
         when {
             params {
