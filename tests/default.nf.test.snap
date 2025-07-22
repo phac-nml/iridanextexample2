@@ -1,7 +1,7 @@
 {
     "-profile test,docker": {
         "content": [
-            4,
+            8,
             {
                 "FASTQC": {
                     "fastqc": "0.12.1"
@@ -11,6 +11,9 @@
                 }
             },
             [
+                "SAMPLE1_PE_metadata.csv",
+                "SAMPLE2_PE_metadata.csv",
+                "SAMPLE3_SE_metadata.csv",
                 "fastqc",
                 "fastqc/SAMPLE1_PE_1_fastqc.html",
                 "fastqc/SAMPLE1_PE_1_fastqc.zip",
@@ -25,6 +28,7 @@
                 "fastqc/SAMPLE3_SE_2_fastqc.html",
                 "fastqc/SAMPLE3_SE_2_fastqc.zip",
                 "iridanext.output.json",
+                "merged_metadata.csv",
                 "multiqc",
                 "multiqc/multiqc_data",
                 "multiqc/multiqc_data/BETA-multiqc.parquet",
@@ -91,7 +95,9 @@
                 "pipeline_info/iridanextexample2_software_mqc_versions.yml"
             ],
             [
-                "iridanext.output.json:md5,c1dafd1c645dc357d4f804284a9dd2b9",
+                "SAMPLE1_PE_metadata.csv:md5,bb8f9695f65b5c42089d3428437d177c",
+                "SAMPLE2_PE_metadata.csv:md5,2d40fb0748d51055c53a931b31138286",
+                "SAMPLE3_SE_metadata.csv:md5,70d70c3e78e133104ed157c92ed2116a",
                 "fastqc-status-check-heatmap.txt:md5,0f1975c565a16bf09be08a05c204ded7",
                 "fastqc_overrepresented_sequences_plot.txt:md5,4b23cea39c4e23deef6b97810bc1ee46",
                 "fastqc_per_base_n_content_plot.txt:md5,037692101c0130c72493d3bbfa3afac1",
@@ -111,7 +117,7 @@
             "nf-test": "0.9.0",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-07-21T10:21:28.642083439"
+        "timestamp": "2025-07-22T14:39:53.003324954"
     },
     "-profile test": {
         "content": [

@@ -10,8 +10,14 @@
             "sample": {
                 "type": "string",
                 "pattern": "^\\S+$",
-                "errorMessage": "Sample name must be provided and cannot contain spaces",
-                "meta": ["id"]
+                "meta": ["irida_id"],
+                "unique": true,
+                "errorMessage": "Sample name must be provided and cannot contain spaces."
+            },
+            "sample_name": {
+                "type": "string",
+                "meta": ["id"],
+                "errorMessage": "Sample name is optional, if provided will replace sample for filenames and outputs"
             },
             "fastq_1": {
                 "type": "string",

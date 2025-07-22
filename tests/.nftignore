@@ -10,3 +10,5 @@ multiqc/multiqc_report.html
 fastqc/*_fastqc.{html,zip}
 pipeline_info/*.{html,json,txt,yml}
 iridanext.output.json.gz
+iridanext.output.json
+merged_metadata.csv
