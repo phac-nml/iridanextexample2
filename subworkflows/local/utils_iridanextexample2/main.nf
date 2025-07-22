@@ -77,23 +77,26 @@ workflow PIPELINE_INITIALISATION {
         .fromList(samplesheetToList(params.input, "${projectDir}/assets/schema_input.json"))
         .map {
             meta, fastq_1, fastq_2 ->
-                if (!meta.id) {
+            if (!meta.id) {
                 meta.id = meta.irida_id
             } else {
                 // Non-alphanumeric characters (excluding _,-,.) will be replaced with "_"
                 meta.id = meta.id.replaceAll(/[^A-Za-z0-9_.\-]/, '_')
             }
+            // Used in the groupTuple below to ensure where multiple reads are provided for a sample, they are grouped together
+            if (!fastq_2) {
+                    return [ meta.id, meta + [ single_end:true ], [ fastq_1 ] ]
+                } else {
+                    return [ meta.id, meta + [ single_end:false ], [ fastq_1, fastq_2 ] ]
+                }
+
             // Ensure ID is unique by appending meta.irida_id if needed
             while (processedIDs.contains(meta.id)) {
                 meta.id = "${meta.id}_${meta.irida_id}"
             }
             // Add the ID to the set of processed IDs
             processedIDs << meta.id
-                if (!fastq_2) {
-                    return [ meta.irida_id, meta + [ single_end:true ], [ fastq_1 ] ]
-                } else {
-                    return [ meta.irida_id, meta + [ single_end:false ], [ fastq_1, fastq_2 ] ]
-                }
+
         }
         .groupTuple()
         .map { samplesheet ->
@@ -104,7 +107,6 @@ workflow PIPELINE_INITIALISATION {
                 return [ meta, fastqs.flatten() ]
         }
         .set { ch_samplesheet }
-    ch_samplesheet
 
     emit:
     samplesheet = ch_samplesheet
