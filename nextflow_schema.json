@@ -43,6 +43,22 @@
                 }
             }
         },
+        "metadata": {
+            "title": "Metadata",
+            "type": "object",
+            "description": "The column header names of the metadata columns.",
+            "default": "",
+            "properties": {
+                "metadata_1_header": {
+                    "type": "string",
+                    "default": "metadata_1",
+                    "description": "The header name of metadata column 1.",
+                    "fa_icon": "far fa-sticky-note",
+                    "pattern": "^[^\\n\\t\"]+$"
+                }
+            },
+            "fa_icon": "far fa-clipboard"
+        },
         "reference_genome_options": {
             "title": "Reference genome options",
             "type": "object",
@@ -231,6 +247,9 @@
     "allOf": [
         {
             "$ref": "#/$defs/input_output_options"
+        },
+        {
+            "$ref": "#/$defs/metadata"
         },
         {
             "$ref": "#/$defs/reference_genome_options"

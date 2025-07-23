@@ -19,6 +19,13 @@
                 "meta": ["id"],
                 "errorMessage": "Sample name is optional, if provided will replace sample for filenames and outputs"
             },
+            "metadata_1": {
+                "type": "string",
+                "meta": ["metadata_1"],
+                "errorMessage": "Metadata associated with the sample (metadata_1).",
+                "default": "",
+                "pattern": "^[^\\n\\t\"]+$"
+            },
             "fastq_1": {
                 "type": "string",
                 "format": "file-path",
