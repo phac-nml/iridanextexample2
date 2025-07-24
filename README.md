@@ -23,7 +23,7 @@
 
 First, prepare a samplesheet with your input data that looks as follows:
 
-An example [samplesheet](assets/samplesheet.csv), which follows the [schema_input.json] structure.
+An example [samplesheet](assets/samplesheet.csv), which follows the [schema_input.json](assets/schema_input.json) structure.
 
 ```csv
 sample,fastq_1,fastq_2

@@ -16,4 +16,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added [nf-iridanext plugin](https://github.com/phac-nml/nf-iridanext) to pipeline. [PR #3](https://github.com/phac-nml/iridanextexample2/pull/3)
 - Added metadata to the `iridanext.output.json` for testing in IRIDA-Next. [PR #4](https://github.com/phac-nml/iridanextexample2/pull/4) and [PR #5](https://github.com/phac-nml/iridanextexample2/pull/5)
 - Include a `sample` and `sample_name` columns to samplesheet for accomodating the IRIDA-Next PID. [PR #4](https://github.com/phac-nml/iridanextexample2/pull/4)
-- Update the documentation to refelect the changes made to the template. [PR #6](https://github.com/phac-nml/iridanextexample2/pull/6)
+- Update the documentation to reflect the changes made to the template. [PR #6](https://github.com/phac-nml/iridanextexample2/pull/6)
