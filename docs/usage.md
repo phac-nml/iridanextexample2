@@ -40,13 +40,13 @@ TREATMENT_REP3,AEG588A6_S6_L003_R1_001.fastq.gz,
 TREATMENT_REP3,AEG588A6_S6_L004_R1_001.fastq.gz,
 ```
 
-| Column        | Description                                                                                                                            |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------   |
-| `sample`      | Unique sample identifier used in IRIDA-Next as the PUID        `[REQUIRED]`                                                            |
-| `sample_name` | Optional sample name, used for user naming.                    `[OPTIONAL]`                                                            |
-| `fastq_1`     | Full path to FastQ file for Illumina short reads 1. File has to be gzipped and have the extension ".fastq.gz" or ".fq.gz". `[REQUIRED]`|
-| `fastq_2`     | Full path to FastQ file for Illumina short reads 2. File has to be gzipped and have the extension ".fastq.gz" or ".fq.gz". `[REQUIRED]`|
-                                        |
+| Column        | Description                                                                                                                             |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `sample`      | Unique sample identifier used in IRIDA-Next as the PUID `[REQUIRED]`                                                                    |
+| `sample_name` | Optional sample name, used for user naming. `[OPTIONAL]`                                                                                |
+| `fastq_1`     | Full path to FastQ file for Illumina short reads 1. File has to be gzipped and have the extension ".fastq.gz" or ".fq.gz". `[REQUIRED]` |
+| `fastq_2`     | Full path to FastQ file for Illumina short reads 2. File has to be gzipped and have the extension ".fastq.gz" or ".fq.gz". `[REQUIRED]` |
+|  |
 
 An [example samplesheet](../assets/samplesheet.csv) has been provided with the pipeline.
 

@@ -42,6 +42,7 @@ nextflow run phac-nml/iridanextexample2 \
    --input samplesheet.csv \
    --outdir <OUTDIR>
 ```
+
 ### Output for IRIDA-Next
 
 Output from the pipeline is available in IRIDA-Next users based on the contents of the `iridanext.output.json.gz`. Files and metadata are passed to the json output file using the [nf-iridanext plugin](https://github.com/phac-nml/nf-iridanext) based on the [iridanext.config](conf/iridanext.config).
