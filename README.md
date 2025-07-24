@@ -19,31 +19,83 @@
 
 ## Usage
 
-<!-- TODO nf-core: Describe the minimum required steps to execute the pipeline, e.g. how to prepare samplesheets.
-     Explain what rows and columns represent. For instance (please edit as appropriate):
+### Input
 
 First, prepare a samplesheet with your input data that looks as follows:
 
-`samplesheet.csv`:
+An example [samplesheet](assets/samplesheet.csv), which follows the [schema_input.json](assets/schema_input.json) structure.
 
 ```csv
 sample,fastq_1,fastq_2
-CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz
+SAMPLE1,sample1_R1.fastq.gz,sample1_R2.fastq.gz
+SAMPLE2,sample2_R1.fastq.gz,sample2_R2.fastq.gz
+SAMPLE3,sample1_R1.fastq.gz,
 ```
 
-Each row represents a fastq file (single-end) or a pair of fastq files (paired end).
+Each row represents a fastq file (single-end) or a pair of fastq files (paired end). Validation of the samplesheet is performed by [nf-schema validateParameters()](https://nextflow-io.github.io/nf-schema/latest/nextflow_schema/).
 
--->
-
-Now, you can run the pipeline using:
-
-<!-- TODO nf-core: update the following command to include all required parameters for a minimal example -->
+### Running the pipeline
 
 ```bash
 nextflow run phac-nml/iridanextexample2 \
    -profile <docker/singularity/.../institute> \
    --input samplesheet.csv \
    --outdir <OUTDIR>
+```
+
+### Output for IRIDA-Next
+
+Output from the pipeline is available in IRIDA-Next users based on the contents of the `iridanext.output.json.gz`. Files and metadata are passed to the json output file using the [nf-iridanext plugin](https://github.com/phac-nml/nf-iridanext) based on the [iridanext.config](conf/iridanext.config).
+
+Example:
+
+```
+{
+    "files": {
+        "global": [
+
+        ],
+        "samples": {
+            "SAMPLE3": [
+                {
+                    "path": "fastqc/SAMPLE3_fastqc.html"
+                }
+            ],
+            "SAMPLE2": [
+                {
+                    "path": "fastqc/SAMPLE2_2_fastqc.html"
+                },
+                {
+                    "path": "fastqc/SAMPLE2_1_fastqc.html"
+                }
+            ],
+            "SAMPLE1": [
+                {
+                    "path": "fastqc/SAMPLE1_2_fastqc.html"
+                },
+                {
+                    "path": "fastqc/SAMPLE1_1_fastqc.html"
+                }
+            ]
+        }
+    },
+    "metadata": {
+        "samples": {
+            "SAMPLE3": {
+                "id": "SAMPLE3",
+                "single_end": "true"
+            },
+            "SAMPLE2": {
+                "id": "SAMPLE2",
+                "single_end": "false"
+            },
+            "SAMPLE1": {
+                "id": "SAMPLE1",
+                "single_end": "false"
+            }
+        }
+    }
+}
 ```
 
 ## Citations
