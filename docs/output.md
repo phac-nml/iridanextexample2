@@ -1,4 +1,4 @@
-# phac-nml/iridanextexampleschema: Output
+# phac-nml/iridanextexample2: Output
 
 ## Introduction
 
@@ -12,9 +12,22 @@ The directories listed below will be created in the results directory after the 
 
 The pipeline is built using [Nextflow](https://www.nextflow.io/) and processes data using the following steps:
 
+- [IRIDA-Next](#iridanext) - IRIDA-Next output required files, added to nf-core template.
 - [FastQC](#fastqc) - Raw read QC
 - [MultiQC](#multiqc) - Aggregate report describing results and QC from the whole pipeline
 - [Pipeline information](#pipeline-information) - Report metrics generated during the workflow execution
+
+### IRIDA-Next
+
+<details markdown="1">
+<summary>Output files</summary>
+
+- `iridanext.output.json.gz` : The IRIDA Next-compliant JSON output file. Compressed using GZIP and conforms to the [IRIDA Next JSON output specifications](https://github.com/phac-nml/pipeline-standards#42-irida-next-json).
+- `merged_metadata.csv` : Used by the nf-iridanext plugin to capture metadata using the [iridanext.config](conf/iridanext.config)
+
+</details>
+
+[IRIDA-Next](https://github.com/phac-nml/irida-next) platform requires pipelines to generate IRIDA Next-compliant JSON output file. The process is handled by [nf-iridanext](https://github.com/phac-nml/nf-iridanext) which selects the files and metadata presented in the IRIDA-Next platform.
 
 ### FastQC
 

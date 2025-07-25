@@ -68,7 +68,7 @@ jobs:
         shard: ${{ fromJson(needs.nf-test-changes.outputs.shard) }}
         profile: [conda, docker, singularity]
         isMain:
-          - ${{ github.base_ref == 'master' || github.base_ref == 'main' }}
+          - ${{ github.base_ref == 'main' || github.base_ref == 'master' }}
         # Exclude conda and singularity on dev
         exclude:
           - isMain: false
@@ -116,7 +116,7 @@ jobs:
   confirm-pass:
     needs: [nf-test]
     if: always()
-    runs-on:  # use GitHub runners
+    runs-on: # use GitHub runners
       - "ubuntu-latest"
     steps:
       - name: One or more tests failed (excluding latest-everything)

@@ -1,7 +1,7 @@
-# phac-nml/iridanextexampleschema
+# phac-nml/iridanextexample2
 
-[![GitHub Actions CI Status](https://github.com/phac-nml/iridanextexampleschema/actions/workflows/nf-test.yml/badge.svg)](https://github.com/phac-nml/iridanextexampleschema/actions/workflows/nf-test.yml)
-[![GitHub Actions Linting Status](https://github.com/phac-nml/iridanextexampleschema/actions/workflows/linting.yml/badge.svg)](https://github.com/phac-nml/iridanextexampleschema/actions/workflows/linting.yml)[![Cite with Zenodo](http://img.shields.io/badge/DOI-10.5281/zenodo.XXXXXXX-1073c8?labelColor=000000)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![GitHub Actions CI Status](https://github.com/phac-nml/iridanextexample2/actions/workflows/nf-test.yml/badge.svg)](https://github.com/phac-nml/iridanextexample2/actions/workflows/nf-test.yml)
+[![GitHub Actions Linting Status](https://github.com/phac-nml/iridanextexample2/actions/workflows/linting.yml/badge.svg)](https://github.com/phac-nml/iridanextexample2/actions/workflows/linting.yml)
 [![nf-test](https://img.shields.io/badge/unit_tests-nf--test-337ab7.svg)](https://www.nf-test.com)
 
 [![Nextflow](https://img.shields.io/badge/version-%E2%89%A524.10.5-green?style=flat&logo=nextflow&logoColor=white&color=%230DC09D&link=https%3A%2F%2Fnextflow.io)](https://www.nextflow.io/)
@@ -9,73 +9,99 @@
 [![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)
 [![run with docker](https://img.shields.io/badge/run%20with-docker-0db7ed?labelColor=000000&logo=docker)](https://www.docker.com/)
 [![run with singularity](https://img.shields.io/badge/run%20with-singularity-1d355c.svg?labelColor=000000)](https://sylabs.io/docs/)
-[![Launch on Seqera Platform](https://img.shields.io/badge/Launch%20%F0%9F%9A%80-Seqera%20Platform-%234256e7)](https://cloud.seqera.io/launch?pipeline=https://github.com/phac-nml/iridanextexampleschema)
 
 ## Introduction
 
-**phac-nml/iridanextexampleschema** is a bioinformatics pipeline that ...
+**phac-nml/iridanextexample2** is an example pipeline for integration with IRIDA-Next. It is a successor to the original [iridanextexample](https://github.com/phac-nml/iridanextexample) which replaces [nf-validation](https://github.com/nextflow-io/nf-validation) with [nf-schema](https://github.com/nextflow-io/nf-schema)
 
-<!-- TODO nf-core:
-   Complete this sentence with a 2-3 sentence summary of what types of data the pipeline ingests, a brief overview of the
-   major pipeline sections and the types of output it produces. You're giving an overview to someone new
-   to nf-core here, in 15-20 seconds. For an example, see https://github.com/nf-core/rnaseq/blob/master/README.md#introduction
--->
-
-<!-- TODO nf-core: Include a figure that guides the user through the major workflow steps. Many nf-core
-     workflows use the "tube map" design for that. See https://nf-co.re/docs/guidelines/graphic_design/workflow_diagrams#examples for examples.   -->
-<!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->1. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))2. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
+1. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
+2. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
 
 ## Usage
 
-> [!NOTE]
-> If you are new to Nextflow and nf-core, please refer to [this page](https://nf-co.re/docs/usage/installation) on how to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/usage/introduction#how-to-run-a-pipeline) with `-profile test` before running the workflow on actual data.
-
-<!-- TODO nf-core: Describe the minimum required steps to execute the pipeline, e.g. how to prepare samplesheets.
-     Explain what rows and columns represent. For instance (please edit as appropriate):
+### Input
 
 First, prepare a samplesheet with your input data that looks as follows:
 
-`samplesheet.csv`:
+An example [samplesheet](assets/samplesheet.csv), which follows the [schema_input.json](assets/schema_input.json) structure.
 
 ```csv
 sample,fastq_1,fastq_2
-CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz
+SAMPLE1,sample1_R1.fastq.gz,sample1_R2.fastq.gz
+SAMPLE2,sample2_R1.fastq.gz,sample2_R2.fastq.gz
+SAMPLE3,sample1_R1.fastq.gz,
 ```
 
-Each row represents a fastq file (single-end) or a pair of fastq files (paired end).
+Each row represents a fastq file (single-end) or a pair of fastq files (paired end). Validation of the samplesheet is performed by [nf-schema validateParameters()](https://nextflow-io.github.io/nf-schema/latest/nextflow_schema/).
 
--->
-
-Now, you can run the pipeline using:
-
-<!-- TODO nf-core: update the following command to include all required parameters for a minimal example -->
+### Running the pipeline
 
 ```bash
-nextflow run phac-nml/iridanextexampleschema \
+nextflow run phac-nml/iridanextexample2 \
    -profile <docker/singularity/.../institute> \
    --input samplesheet.csv \
    --outdir <OUTDIR>
 ```
 
-> [!WARNING]
-> Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration _**except for parameters**_; see [docs](https://nf-co.re/docs/usage/getting_started/configuration#custom-configuration-files).
+### Output for IRIDA-Next
 
-## Credits
+Output from the pipeline is available in IRIDA-Next users based on the contents of the `iridanext.output.json.gz`. Files and metadata are passed to the json output file using the [nf-iridanext plugin](https://github.com/phac-nml/nf-iridanext) based on the [iridanext.config](conf/iridanext.config).
 
-phac-nml/iridanextexampleschema was originally written by Steven Sutcliffe.
+Example:
 
-We thank the following people for their extensive assistance in the development of this pipeline:
+```
+{
+    "files": {
+        "global": [
 
-<!-- TODO nf-core: If applicable, make list of people who have also contributed -->
-
-## Contributions and Support
-
-If you would like to contribute to this pipeline, please see the [contributing guidelines](.github/CONTRIBUTING.md).
+        ],
+        "samples": {
+            "SAMPLE3": [
+                {
+                    "path": "fastqc/SAMPLE3_fastqc.html"
+                }
+            ],
+            "SAMPLE2": [
+                {
+                    "path": "fastqc/SAMPLE2_2_fastqc.html"
+                },
+                {
+                    "path": "fastqc/SAMPLE2_1_fastqc.html"
+                }
+            ],
+            "SAMPLE1": [
+                {
+                    "path": "fastqc/SAMPLE1_2_fastqc.html"
+                },
+                {
+                    "path": "fastqc/SAMPLE1_1_fastqc.html"
+                }
+            ]
+        }
+    },
+    "metadata": {
+        "samples": {
+            "SAMPLE3": {
+                "id": "SAMPLE3",
+                "single_end": "true"
+            },
+            "SAMPLE2": {
+                "id": "SAMPLE2",
+                "single_end": "false"
+            },
+            "SAMPLE1": {
+                "id": "SAMPLE1",
+                "single_end": "false"
+            }
+        }
+    }
+}
+```
 
 ## Citations
 
 <!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi and badge at the top of this file. -->
-<!-- If you use phac-nml/iridanextexampleschema for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
+<!-- If you use phac-nml/iridanextexample2 for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
 
 <!-- TODO nf-core: Add bibliography of tools and data used in your pipeline -->
 
@@ -88,3 +114,18 @@ This pipeline uses code and infrastructure developed and maintained by the [nf-c
 > Philip Ewels, Alexander Peltzer, Sven Fillinger, Harshil Patel, Johannes Alneberg, Andreas Wilm, Maxime Ulysse Garcia, Paolo Di Tommaso & Sven Nahnsen.
 >
 > _Nat Biotechnol._ 2020 Feb 13. doi: [10.1038/s41587-020-0439-x](https://dx.doi.org/10.1038/s41587-020-0439-x).
+
+# Legal
+
+Copyright 2023 Government of Canada
+
+Licensed under the MIT License (the "License"); you may not use
+this work except in compliance with the License. You may obtain a copy of the
+License at:
+
+https://opensource.org/license/mit/
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.

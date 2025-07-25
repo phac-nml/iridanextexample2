@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/phac-nml/iridanextexampleschema/master/assets/schema_input.json",
-    "title": "phac-nml/iridanextexampleschema pipeline - params.input schema",
+    "$id": "https://raw.githubusercontent.com/phac-nml/iridanextexample2/main/assets/schema_input.json",
+    "title": "phac-nml/iridanextexample2 pipeline - params.input schema",
     "description": "Schema for the file provided with params.input",
     "type": "array",
     "items": {
@@ -10,8 +10,21 @@
             "sample": {
                 "type": "string",
                 "pattern": "^\\S+$",
-                "errorMessage": "Sample name must be provided and cannot contain spaces",
-                "meta": ["id"]
+                "meta": ["irida_id"],
+                "unique": true,
+                "errorMessage": "Sample name must be provided and cannot contain spaces."
+            },
+            "sample_name": {
+                "type": "string",
+                "meta": ["id"],
+                "errorMessage": "Sample name is optional, if provided will replace sample for filenames and outputs"
+            },
+            "metadata_1": {
+                "type": "string",
+                "meta": ["metadata_1"],
+                "errorMessage": "Metadata associated with the sample (metadata_1).",
+                "default": "",
+                "pattern": "^[^\\n\\t\"]+$"
             },
             "fastq_1": {
                 "type": "string",

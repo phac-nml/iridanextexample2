@@ -1,4 +1,4 @@
-# phac-nml/iridanextexampleschema: Citations
+# phac-nml/iridanextexample2: Citations
 
 ## [nf-core](https://pubmed.ncbi.nlm.nih.gov/32055031/)
 

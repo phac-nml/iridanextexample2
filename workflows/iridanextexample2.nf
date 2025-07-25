@@ -8,22 +8,69 @@ include { MULTIQC                } from '../modules/nf-core/multiqc/main'
 include { paramsSummaryMap       } from 'plugin/nf-schema'
 include { paramsSummaryMultiqc   } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pipeline'
-include { methodsDescriptionText } from '../subworkflows/local/utils_nfcore_iridanextexampleschema_pipeline'
+include { methodsDescriptionText } from '../subworkflows/local/utils_iridanextexample2'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     RUN MAIN WORKFLOW
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
+process TEST_METADATA{
+    label 'process_single'
+    publishDir "${params.outdir}", mode: 'copy'
 
-workflow IRIDANEXTEXAMPLESCHEMA {
+    input:
+    tuple val(meta), path(reads)
+
+    output:
+    path("${meta.id}_metadata.csv"), emit: metadata
+
+    when:
+    task.ext.when == null || task.ext.when
+
+    script:
+    """
+    echo -e '${meta.irida_id},${meta.id},${meta.single_end}' > ${meta.id}_metadata.csv
+    """
+}
+
+process MERGE_METADATA {
+    label 'process_single'
+    publishDir "${params.outdir}", mode: 'copy'
+
+    input:
+    path(metadata_files)
+
+    output:
+    path("merged_metadata.csv"), emit: merged_metadata
+
+    script:
+    """
+    # Add header
+    echo -e 'irida_id,id,single_end' > merged_metadata.csv
+
+    # Concatenate all metadata files
+    cat ${metadata_files} >> merged_metadata.csv
+    """
+}
+
+workflow iridanextexample2 {
 
     take:
     ch_samplesheet // channel: samplesheet read in from --input
     main:
-
     ch_versions = Channel.empty()
     ch_multiqc_files = Channel.empty()
+
+    TEST_METADATA(
+        ch_samplesheet
+    )
+
+    TEST_METADATA.out.metadata
+        .collect()
+        .set { collected_metadata }
+
+    MERGE_METADATA(collected_metadata)
     //
     // MODULE: Run FastQC
     //
@@ -39,7 +86,7 @@ workflow IRIDANEXTEXAMPLESCHEMA {
     softwareVersionsToYAML(ch_versions)
         .collectFile(
             storeDir: "${params.outdir}/pipeline_info",
-            name:  'iridanextexampleschema_software_'  + 'mqc_'  + 'versions.yml',
+            name:  'iridanextexample2_software_'  + 'mqc_'  + 'versions.yml',
             sort: true,
             newLine: true
         ).set { ch_collated_versions }

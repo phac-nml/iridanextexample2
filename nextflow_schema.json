@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/phac-nml/iridanextexampleschema/master/nextflow_schema.json",
-    "title": "phac-nml/iridanextexampleschema pipeline parameters",
+    "$id": "https://raw.githubusercontent.com/phac-nml/iridanextexample2/main/nextflow_schema.json",
+    "title": "phac-nml/iridanextexample2 pipeline parameters",
     "description": "An example pipeline for running on IRIDA-Next with nf-schema",
     "type": "object",
     "$defs": {
@@ -42,6 +42,51 @@
                     "fa_icon": "fas fa-file-signature"
                 }
             }
+        },
+        "irida_next_test_parameters": {
+            "title": "IRIDA-Next Test Parameters",
+            "type": "object",
+            "description": "Parameters that do not impact the pipeline but can be used to test the functionalilty of IRIDA-Next",
+            "default": "",
+            "properties": {
+                "test_filepath": {
+                    "type": "string",
+                    "description": "Parameter to add a file/directory path",
+                    "format": "path"
+                },
+                "test_enum": {
+                    "type": "string",
+                    "description": "Parameter to test enum type",
+                    "default": "on",
+                    "enum": ["on", "off", "alternative"]
+                },
+                "test_bool": {
+                    "type": "boolean",
+                    "description": "Parameter to test boolean type",
+                    "default": true
+                },
+                "test_int": {
+                    "type": "integer",
+                    "description": "Parameter to test integer",
+                    "default": 5
+                }
+            }
+        },
+        "metadata": {
+            "title": "Metadata",
+            "type": "object",
+            "description": "The column header names of the metadata columns.",
+            "default": "",
+            "properties": {
+                "metadata_1_header": {
+                    "type": "string",
+                    "default": "metadata_1",
+                    "description": "The header name of metadata column 1.",
+                    "fa_icon": "far fa-sticky-note",
+                    "pattern": "^[^\\n\\t\"]+$"
+                }
+            },
+            "fa_icon": "far fa-clipboard"
         },
         "reference_genome_options": {
             "title": "Reference genome options",
@@ -231,6 +276,12 @@
     "allOf": [
         {
             "$ref": "#/$defs/input_output_options"
+        },
+        {
+            "$ref": "#/$defs/irida_next_test_parameters"
+        },
+        {
+            "$ref": "#/$defs/metadata"
         },
         {
             "$ref": "#/$defs/reference_genome_options"
