@@ -15,6 +15,7 @@ lint:
     - docs/README.md
     - .github/workflows/linting.yml
   nextflow_config:
+    - custom_config
     - manifest.name
     - manifest.homePage
     - validation.help.beforeText
@@ -37,7 +38,7 @@ template:
   name: iridanextexample2
   description: An example pipeline for running on IRIDA-Next with nf-schema
   author: Steven Sutcliffe
-  version: 1.0.0dev
+  version: 1.0.0
   force: true
   outdir: .
   is_nfcore: false
