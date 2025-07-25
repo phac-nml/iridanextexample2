@@ -10,7 +10,10 @@
             "type": "object",
             "fa_icon": "fas fa-terminal",
             "description": "Define where the pipeline should find input data and save output data.",
-            "required": ["input", "outdir"],
+            "required": [
+                "input",
+                "outdir"
+            ],
             "properties": {
                 "input": {
                     "type": "string",
@@ -40,6 +43,39 @@
                     "type": "string",
                     "description": "MultiQC report title. Printed as page header, used for filename if not otherwise specified.",
                     "fa_icon": "fas fa-file-signature"
+                }
+            }
+        },
+        "irida_next_test_parameters": {
+            "title": "IRIDA-Next Test Parameters",
+            "type": "object",
+            "description": "Parameters that do not impact the pipeline but can be used to test the functionalilty of IRIDA-Next",
+            "default": "",
+            "properties": {
+                "test_filepath": {
+                    "type": "string",
+                    "description": "Parameter to add a file/directory path",
+                    "format": "path"
+                },
+                "test_enum": {
+                    "type": "string",
+                    "description": "Parameter to test enum type",
+                    "default": "on",
+                    "enum": [
+                        "on",
+                        "off",
+                        "alternative"
+                    ]
+                },
+                "test_bool": {
+                    "type": "boolean",
+                    "description": "Parameter to test boolean type",
+                    "default": true
+                },
+                "test_int": {
+                    "type": "integer",
+                    "description": "Parameter to test integer",
+                    "default": 5
                 }
             }
         },
@@ -165,7 +201,14 @@
                     "description": "Method used to save pipeline results to output directory.",
                     "help_text": "The Nextflow `publishDir` option specifies which intermediate files should be saved to the output directory. This option tells the pipeline what method should be used to move these files. See [Nextflow docs](https://www.nextflow.io/docs/latest/process.html#publishdir) for details.",
                     "fa_icon": "fas fa-copy",
-                    "enum": ["symlink", "rellink", "link", "copy", "copyNoFollow", "move"],
+                    "enum": [
+                        "symlink",
+                        "rellink",
+                        "link",
+                        "copy",
+                        "copyNoFollow",
+                        "move"
+                    ],
                     "hidden": true
                 },
                 "email_on_fail": {
@@ -247,6 +290,9 @@
     "allOf": [
         {
             "$ref": "#/$defs/input_output_options"
+        },
+        {
+            "$ref": "#/$defs/irida_next_test_parameters"
         },
         {
             "$ref": "#/$defs/metadata"
