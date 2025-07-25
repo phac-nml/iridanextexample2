@@ -19,4 +19,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update the documentation to reflect the changes made to the template. [PR #6](https://github.com/phac-nml/iridanextexample2/pull/6)
 - Add a category of parameters for checking in IRIDA-Next (i.e. file-path, boolean, enum, and integer). [PR #7](https://github.com/phac-nml/iridanextexample2/pull/7)
 
-[0.7.1]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.0
+[0.1.0]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.0
