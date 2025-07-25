@@ -7,7 +7,7 @@
                     "fastqc": "0.12.1"
                 },
                 "Workflow": {
-                    "phac-nml/iridanextexample2": "v1.0.0dev"
+                    "phac-nml/iridanextexample2": "v0.1.0"
                 }
             },
             [
@@ -117,7 +117,7 @@
             "nf-test": "0.9.0",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-07-22T14:39:53.003324954"
+        "timestamp": "2025-07-25T16:02:53.359429554"
     },
     "-profile test": {
         "content": [
