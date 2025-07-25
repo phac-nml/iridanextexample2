@@ -43,6 +43,35 @@
                 }
             }
         },
+        "irida_next_test_parameters": {
+            "title": "IRIDA-Next Test Parameters",
+            "type": "object",
+            "description": "Parameters that do not impact the pipeline but can be used to test the functionalilty of IRIDA-Next",
+            "default": "",
+            "properties": {
+                "test_filepath": {
+                    "type": "string",
+                    "description": "Parameter to add a file/directory path",
+                    "format": "path"
+                },
+                "test_enum": {
+                    "type": "string",
+                    "description": "Parameter to test enum type",
+                    "default": "on",
+                    "enum": ["on", "off", "alternative"]
+                },
+                "test_bool": {
+                    "type": "boolean",
+                    "description": "Parameter to test boolean type",
+                    "default": true
+                },
+                "test_int": {
+                    "type": "integer",
+                    "description": "Parameter to test integer",
+                    "default": 5
+                }
+            }
+        },
         "metadata": {
             "title": "Metadata",
             "type": "object",
@@ -247,6 +276,9 @@
     "allOf": [
         {
             "$ref": "#/$defs/input_output_options"
+        },
+        {
+            "$ref": "#/$defs/irida_next_test_parameters"
         },
         {
             "$ref": "#/$defs/metadata"
