@@ -3,7 +3,7 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## v1.0.0dev - [date]
+## [0.1.0] - 2025-07-25
 
 - Initial release of phac-nml/iridanextexample2, created with the [nf-core](https://nf-co.re/) template.
 - Updated nf-core template:
@@ -18,3 +18,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Include a `sample` and `sample_name` columns to samplesheet for accomodating the IRIDA-Next PID. [PR #4](https://github.com/phac-nml/iridanextexample2/pull/4)
 - Update the documentation to reflect the changes made to the template. [PR #6](https://github.com/phac-nml/iridanextexample2/pull/6)
 - Add a category of parameters for checking in IRIDA-Next (i.e. file-path, boolean, enum, and integer). [PR #7](https://github.com/phac-nml/iridanextexample2/pull/7)
+
+[0.7.1]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.0
