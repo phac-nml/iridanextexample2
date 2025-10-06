@@ -3,7 +3,6 @@ repository_type: pipeline
 nf_core_version: 3.3.2
 
 lint:
-  included_configs: False
   files_unchanged:
     - CODE_OF_CONDUCT.md
     - assets/nf-core-iridanextexample2_logo_light.png
@@ -14,7 +13,6 @@ lint:
     - .github/PULL_REQUEST_TEMPLATE.md
     - assets/email_template.txt
     - docs/README.md
-    - .github/workflows/linting.yml
   nextflow_config:
     - custom_config
     - manifest.name
