@@ -76,9 +76,9 @@ workflow {
         params.help,
         params.help_full,
         params.show_hidden,
-        null,
-        null,
-        null
+        "",
+        "",
+        "nextflow run phac-nml/iridanextexample2 -profile <docker/singularity/.../institute> --input samplesheet.csv --outdir <OUTDIR>"
     )
 
     //
