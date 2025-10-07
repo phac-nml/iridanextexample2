@@ -32,6 +32,12 @@ workflow PIPELINE_INITIALISATION {
     nextflow_cli_args //   array: List of positional nextflow CLI args
     outdir            //  string: The output directory where the results will be saved
     input             //  string: Path to input samplesheet
+    help              // boolean:  show help message
+    help_full         // boolean:  show full help message
+    show_hidden       // boolean:  show hidden parameters in help message
+    before_text       // string:   text to show before the help message and parameters summary
+    after_text        // string:   text to show after the help message and parameters summary
+    command           // string:   an example command of the pipeline
 
     main:
 
@@ -53,7 +59,13 @@ workflow PIPELINE_INITIALISATION {
     UTILS_NFSCHEMA_PLUGIN (
         workflow,
         validate_params,
-        null
+        null,
+        help,
+        help_full,
+        show_hidden,
+        before_text,
+        after_text,
+        command
     )
 
     //
