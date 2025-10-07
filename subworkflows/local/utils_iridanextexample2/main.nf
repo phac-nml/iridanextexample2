@@ -59,7 +59,7 @@ workflow PIPELINE_INITIALISATION {
     UTILS_NFSCHEMA_PLUGIN (
         workflow,
         validate_params,
-        null,
+        "${projectDir}/nextflow_schema.json",
         help,
         help_full,
         show_hidden,
@@ -86,7 +86,7 @@ workflow PIPELINE_INITIALISATION {
     // Track processed IDs
     def processedIDs = [] as Set
     Channel
-        .fromList(samplesheetToList(params.input, "${projectDir}/assets/schema_input.json"))
+        .fromList(samplesheetToList(input, "${projectDir}/assets/schema_input.json"))
         .map {
             meta, fastq_1, fastq_2 ->
             if (!meta.id) {
