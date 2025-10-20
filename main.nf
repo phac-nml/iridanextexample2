@@ -69,10 +69,15 @@ workflow {
     PIPELINE_INITIALISATION (
         params.version,
         params.validate_params,
-        params.monochrome_logs,
         args,
         params.outdir,
-        params.input
+        params.input,
+        params.help,
+        params.help_full,
+        params.show_hidden,
+        "",
+        "",
+        "nextflow run phac-nml/iridanextexample2 -profile <docker/singularity/.../institute> --input samplesheet.csv --outdir <OUTDIR>"
     )
 
     //
