@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### `Updated`
 
-- Some minor updates to GitHub actions and `.nf-core.yml` to better match latest nf-core template. [PR #8](https://github.com/phac-nml/iridanextexample2/pull/8)
+- Some minor updates to GitHub actions and `.nf-core.yml` to better match latest nf-core template. [PR #8](https://github.com/phac-nml/iridanextexample2/pull/8) and [PR #11](https://github.com/phac-nml/iridanextexample2/pull/11)
 - Updated nf-core modules and subworkflows. [PR #8](https://github.com/phac-nml/iridanextexample2/pull/8)
 
 ## [0.1.0] - 2025-07-25
