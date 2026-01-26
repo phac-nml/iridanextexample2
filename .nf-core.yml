@@ -31,6 +31,7 @@ lint:
     - .github/ISSUE_TEMPLATE/config.yml
     - .github/workflows/awstest.yml
     - .github/workflows/awsfulltest.yml
+  included_configs: false
 
 template:
   org: phac-nml
