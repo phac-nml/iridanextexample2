@@ -3,6 +3,19 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-01-26
+
+### `Added`
+
+- Adding GitHub CI tests against Nextflow `24.10.3`. [PR #8](https://github.com/phac-nml/iridanextexample2/pull/8)
+  - Required downgrading minimum Nextflow version from `24.10.5` to `24.10.3`.
+- Added `task.ext.override_configured_container_registry` check so that the multiqc container from `community.wave.seqera.io` can be overridden for private container registries. [PR #11](https://github.com/phac-nml/iridanextexample2/pull/11)
+
+### `Updated`
+
+- Some minor updates to GitHub actions and `.nf-core.yml` to better match latest nf-core template. [PR #8](https://github.com/phac-nml/iridanextexample2/pull/8) and [PR #11](https://github.com/phac-nml/iridanextexample2/pull/11)
+- Updated nf-core modules and subworkflows. [PR #8](https://github.com/phac-nml/iridanextexample2/pull/8)
+
 ## [0.1.0] - 2025-07-25
 
 - Initial release of phac-nml/iridanextexample2, created with the [nf-core](https://nf-co.re/) template.
@@ -20,3 +33,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add a category of parameters for checking in IRIDA-Next (i.e. file-path, boolean, enum, and integer). [PR #7](https://github.com/phac-nml/iridanextexample2/pull/7)
 
 [0.1.0]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.0
+[0.1.1]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.1
