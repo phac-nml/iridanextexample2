@@ -1,6 +1,6 @@
 repository_type: pipeline
 
-nf_core_version: 3.3.2
+nf_core_version: 3.5.1
 
 lint:
   files_unchanged:
@@ -37,7 +37,7 @@ template:
   name: iridanextexample2
   description: An example pipeline for running on IRIDA-Next with nf-schema
   author: Steven Sutcliffe
-  version: 0.1.0
+  version: 0.1.1
   force: true
   outdir: .
   is_nfcore: false
