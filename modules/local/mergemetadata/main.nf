@@ -1,6 +1,9 @@
 process MERGE_METADATA {
     label 'process_single'
     publishDir "${params.outdir}", mode: 'copy'
+    container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
+        'https://depot.galaxyproject.org/singularity/python:3.10' :
+        'biocontainers/python:3.10' }"
 
     input:
     path metadata_files
