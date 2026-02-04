@@ -5,6 +5,8 @@
 */
 include { FASTQC                 } from '../modules/nf-core/fastqc/main'
 include { MULTIQC                } from '../modules/nf-core/multiqc/main'
+include { TEST_METADATA          } from '../modules/local/testmetadata/main'
+include { MERGE_METADATA         } from '../modules/local/mergemetadata/main'
 include { paramsSummaryMap       } from 'plugin/nf-schema'
 include { paramsSummaryMultiqc   } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pipeline'
@@ -15,44 +17,6 @@ include { methodsDescriptionText } from '../subworkflows/local/utils_iridanextex
     RUN MAIN WORKFLOW
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-process TEST_METADATA{
-    label 'process_single'
-    publishDir "${params.outdir}", mode: 'copy'
-
-    input:
-    tuple val(meta), path(reads)
-
-    output:
-    path("${meta.id}_metadata.csv"), emit: metadata
-
-    when:
-    task.ext.when == null || task.ext.when
-
-    script:
-    """
-    echo -e '${meta.irida_id},${meta.id},${meta.single_end}' > ${meta.id}_metadata.csv
-    """
-}
-
-process MERGE_METADATA {
-    label 'process_single'
-    publishDir "${params.outdir}", mode: 'copy'
-
-    input:
-    path(metadata_files)
-
-    output:
-    path("merged_metadata.csv"), emit: merged_metadata
-
-    script:
-    """
-    # Add header
-    echo -e 'irida_id,id,single_end' > merged_metadata.csv
-
-    # Concatenate all metadata files
-    cat ${metadata_files} >> merged_metadata.csv
-    """
-}
 
 workflow iridanextexample2 {
 
