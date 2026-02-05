@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Refactored local modules to separate directories under `modules/local`. [PR #13](https://github.com/phac-nml/iridanextexample2/pull/13)
 - Adding containers to `TEST_METADATA` and `MERGE_METADATA` modules. [PR #13](https://github.com/phac-nml/iridanextexample2/pull/13)
+- Removed `template-version-comment.yml` GitHub workflow since it only works for nf-core pipelines. [PR #13](https://github.com/phac-nml/iridanextexample2/pull/13)
 
 ## [0.1.1] - 2026-01-26
 
