@@ -10,6 +10,7 @@ process MERGE_METADATA {
 
     output:
     path("merged_metadata.csv"), emit: merged_metadata
+    path "versions.yml"        , emit: versions
 
     script:
     """
@@ -18,5 +19,11 @@ process MERGE_METADATA {
 
     # Concatenate all metadata files
     cat ${metadata_files} >> merged_metadata.csv
+
+    # Example of writing versions to "versions.yml"
+    cat <<-END_VERSIONS > versions.yml
+    "${task.process}":
+        cat: \$( cat --version | head -n 1 | sed -e 's/cat (GNU coreutils) //' )
+    END_VERSIONS
     """
 }
