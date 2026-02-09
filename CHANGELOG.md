@@ -3,6 +3,18 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] - 2026-02-09
+
+### `Updated`
+
+- Refactored local modules to separate directories under `modules/local`. [PR #13](https://github.com/phac-nml/iridanextexample2/pull/13)
+- Adding containers to `TEST_METADATA` and `MERGE_METADATA` modules. [PR #13](https://github.com/phac-nml/iridanextexample2/pull/13)
+- Added output of version for `MERGE_METADATA` module. [PR #13](https://github.com/phac-nml/iridanextexample2/pull/13)
+
+### `Removed`
+
+- Removed `template-version-comment.yml` GitHub workflow since it only works for nf-core pipelines. [PR #13](https://github.com/phac-nml/iridanextexample2/pull/13)
+
 ## [0.1.1] - 2026-01-26
 
 ### `Added`
@@ -34,3 +46,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [0.1.0]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.0
 [0.1.1]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.1
+[0.1.2]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.2
