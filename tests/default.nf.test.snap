@@ -7,7 +7,7 @@
                     "fastqc": "0.12.1"
                 },
                 "MERGE_METADATA": {
-                    "cat": null
+                    "cat": "BusyBox v1.32.1"
                 },
                 "Workflow": {
                     "phac-nml/iridanextexample2": "v0.1.2"
@@ -31,7 +31,8 @@
                 "fastqc/SAMPLE3_SE_2_fastqc.html",
                 "fastqc/SAMPLE3_SE_2_fastqc.zip",
                 "iridanext.output.json",
-                "merged_metadata.csv",
+                "mergemetadata",
+                "mergemetadata/merged_metadata.csv",
                 "multiqc",
                 "multiqc/multiqc_data",
                 "multiqc/multiqc_data/fastqc-status-check-heatmap.txt",
@@ -96,13 +97,13 @@
                 "multiqc/multiqc_plots/svg/fastqc_top_overrepresented_sequences_table.svg",
                 "multiqc/multiqc_report.html",
                 "pipeline_info",
-                "pipeline_info/iridanextexample2_software_mqc_versions.yml",
-                "versions.yml"
+                "pipeline_info/iridanextexample2_software_mqc_versions.yml"
             ],
             [
                 "SAMPLE1_PE_metadata.csv:md5,bb8f9695f65b5c42089d3428437d177c",
                 "SAMPLE2_PE_metadata.csv:md5,2d40fb0748d51055c53a931b31138286",
                 "SAMPLE3_SE_metadata.csv:md5,70d70c3e78e133104ed157c92ed2116a",
+                "merged_metadata.csv:md5,e5a262b8c31eb661fe8028d878d66aa7",
                 "fastqc-status-check-heatmap.txt:md5,0f1975c565a16bf09be08a05c204ded7",
                 "fastqc_overrepresented_sequences_plot.txt:md5,4b23cea39c4e23deef6b97810bc1ee46",
                 "fastqc_per_base_n_content_plot.txt:md5,037692101c0130c72493d3bbfa3afac1",
@@ -115,14 +116,13 @@
                 "fastqc_sequence_length_distribution_plot.txt:md5,e82b9b14a7e24c0c5f27af97cebb6870",
                 "multiqc_citations.txt:md5,4c806e63a283ec1b7e78cdae3a923d4f",
                 "multiqc_fastqc.txt:md5,1a41c2158adc9947bff9232962f70110",
-                "multiqc_general_stats.txt:md5,0b54e4e764665bd57fe0f95216744a78",
-                "versions.yml:md5,b44ef6e4292af8debd75074ba6e53884"
+                "multiqc_general_stats.txt:md5,0b54e4e764665bd57fe0f95216744a78"
             ]
         ],
         "meta": {
             "nf-test": "0.9.3",
             "nextflow": "25.10.3"
         },
-        "timestamp": "2026-02-06T12:20:21.538211691"
+        "timestamp": "2026-02-09T09:02:43.504359229"
     }
 }

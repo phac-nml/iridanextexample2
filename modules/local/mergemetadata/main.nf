@@ -23,7 +23,7 @@ process MERGE_METADATA {
     # Example of writing versions to "versions.yml"
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        cat: \$( cat --version | head -n 1 | sed -e 's/cat (GNU coreutils) //' )
+        cat: "\$( cat --help 2>&1 | head -n 1 | sed -e 's/ (.*//' )"
     END_VERSIONS
     """
 }
