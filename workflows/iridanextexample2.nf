@@ -36,7 +36,7 @@ workflow iridanextexample2 {
 
     MERGE_METADATA(collected_metadata)
     ch_versions = ch_versions.mix(MERGE_METADATA.out.versions)
-    
+
     //
     // MODULE: Run FastQC
     //
