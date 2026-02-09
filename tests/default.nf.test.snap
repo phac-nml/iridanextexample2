@@ -103,7 +103,6 @@
                 "SAMPLE1_PE_metadata.csv:md5,bb8f9695f65b5c42089d3428437d177c",
                 "SAMPLE2_PE_metadata.csv:md5,2d40fb0748d51055c53a931b31138286",
                 "SAMPLE3_SE_metadata.csv:md5,70d70c3e78e133104ed157c92ed2116a",
-                "merged_metadata.csv:md5,e5a262b8c31eb661fe8028d878d66aa7",
                 "fastqc-status-check-heatmap.txt:md5,0f1975c565a16bf09be08a05c204ded7",
                 "fastqc_overrepresented_sequences_plot.txt:md5,4b23cea39c4e23deef6b97810bc1ee46",
                 "fastqc_per_base_n_content_plot.txt:md5,037692101c0130c72493d3bbfa3afac1",
@@ -123,6 +122,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.3"
         },
-        "timestamp": "2026-02-09T09:02:43.504359229"
+        "timestamp": "2026-02-09T09:44:31.555682393"
     }
 }
