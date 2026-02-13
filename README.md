@@ -97,6 +97,20 @@ Example:
 }
 ```
 
+## Testing
+
+We make use of [nf-test](https://www.nf-test.com/) for automated testing of the pipeline. You can run the tests using docker containers with:
+
+```bash
+nf-test test --profile +docker
+```
+
+You can run the tests using singularity containers with:
+
+```bash
+nf-test test --profile +singularity
+```
+
 ## Citations
 
 <!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi and badge at the top of this file. -->
