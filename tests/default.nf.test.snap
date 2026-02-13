@@ -1,5 +1,5 @@
 {
-    "-profile test,docker": {
+    "-profile test": {
         "content": [
             8,
             {
@@ -118,10 +118,10 @@
                 "multiqc_general_stats.txt:md5,0b54e4e764665bd57fe0f95216744a78"
             ]
         ],
+        "timestamp": "2026-02-13T12:31:01.315975898",
         "meta": {
-            "nf-test": "0.9.3",
-            "nextflow": "25.10.3"
-        },
-        "timestamp": "2026-02-09T09:44:31.555682393"
+            "nf-test": "0.9.4",
+            "nextflow": "25.10.4"
+        }
     }
 }
