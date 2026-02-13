@@ -20,7 +20,7 @@
                 "errorMessage": "Sample name is optional, if provided will replace sample for filenames and outputs"
             },
             "metadata_1": {
-                "type": "string",
+                "type": ["string", "number"],
                 "meta": ["metadata_1"],
                 "errorMessage": "Metadata associated with the sample (metadata_1).",
                 "default": "",
