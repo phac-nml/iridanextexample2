@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.3] - 2026-02-13
 
+### `Updated`
+
+- Updated test cases to use the stored `assets/samplesheet.csv` file and adjusted samplesheet to test for metadata values. [PR #15](https://github.com/phac-nml/iridanextexample2/pull/15)
+
 ### `Fixed`
 
 - Fixed validation errors when the passed metadata value in the samplesheet is a number using recommendation from [nf-schema docs](https://nextflow-io.github.io/nf-schema/latest/extras/troubleshooting/#an-integer-value-is-failing-because-a-string-value-was-expected). [PR #15](https://github.com/phac-nml/iridanextexample2/pull/15)
@@ -53,3 +57,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.1.0]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.0
 [0.1.1]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.1
 [0.1.2]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.2
+[0.1.3]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.3
