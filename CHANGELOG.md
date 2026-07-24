@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### `Updated`
 
 - Set nextflow version 25.10.4 to replace 'latest-everything' to confirm compatibility with next IRIDA-Next nextflow version in `.github/workflows` for nf-test. [PR #17](https://github.com/phac-nml/iridanextexample2/pull/17)
+- Adding an iridanext example that controls Irida Next behaviour, including enabling the nf-iridanext plugin and changing output file names.
 
 ## [0.1.3] - 2026-02-13
 
