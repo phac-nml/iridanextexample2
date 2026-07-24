@@ -4,11 +4,40 @@ nextflow_pipeline {
     script "../../main.nf"
     tag "pipeline"
 
-    test("Check iridanext output") {
-        tag "iridanext_output"
+    test("Basic Test - iridanext Disabled") {
+        tag "basic_iridanext_disabled"
         when {
             params {
                 outdir = "$outputDir"
+                iridanext = false
+            }
+        }
+
+        then {
+            // Check that the iridanext output file does NOT exist
+            def iridanextOutput = path("$outputDir/iridanext.output.json")
+            assert iridanextOutput.exists() == false
+
+            // Assert Output Exists:
+            assert path("$outputDir/fastqc/SAMPLE1_PE_1_fastqc.html").exists()
+            assert path("$outputDir/fastqc/SAMPLE1_PE_2_fastqc.html").exists()
+            assert path("$outputDir/fastqc/SAMPLE2_PE_1_fastqc.html").exists()
+            assert path("$outputDir/fastqc/SAMPLE2_PE_2_fastqc.html").exists()
+            assert path("$outputDir/fastqc/SAMPLE3_SE_fastqc.html").exists()
+
+            assert path("$outputDir/mergemetadata/merged_metadata.csv").exists()
+
+            assert path("$outputDir/multiqc/multiqc_data").exists()
+            assert path("$outputDir/multiqc/multiqc_plots").exists()
+        }
+    }
+
+    test("Basic Test - iridanext Enabled") {
+        tag "basic_iridanext_enabled"
+        when {
+            params {
+                outdir = "$outputDir"
+                iridanext = true
             }
         }
 
@@ -20,10 +49,12 @@ nextflow_pipeline {
             def iridanext_samples = iridanextOutput.files.samples
             def iridanext_metadata = iridanextOutput.metadata.samples
             assert iridanext_samples.size() == 4
-            assertContainsInAnyOrder(iridanext_samples.SAMPLE1_PE, [['path':'fastqc/SAMPLE1_PE_1_fastqc.html'], ['path':'fastqc/SAMPLE1_PE_2_fastqc.html']])
-            assertContainsInAnyOrder(iridanext_samples.SAMPLE2_PE, [['path':'fastqc/SAMPLE2_PE_1_fastqc.html'], ['path':'fastqc/SAMPLE2_PE_2_fastqc.html']])
-            assertContainsInAnyOrder(iridanext_samples.SAMPLE3_SE, [['path':'fastqc/SAMPLE3_SE_fastqc.html']])
-            assertContainsInAnyOrder(iridanext_samples.SAMPLE4_SE, [['path':'fastqc/SAMPLE4_SE_fastqc.html']])
+            assert iridanext_samples.SAMPLE1_PE.path.sort()[0] ==~ "fastqc/iridanextexample2-.*-SAMPLE1_PE_1_fastqc.html"
+            assert iridanext_samples.SAMPLE1_PE.path.sort()[1] ==~ "fastqc/iridanextexample2-.*-SAMPLE1_PE_2_fastqc.html"
+            assert iridanext_samples.SAMPLE2_PE.path.sort()[0] ==~ "fastqc/iridanextexample2-.*-SAMPLE2_PE_1_fastqc.html"
+            assert iridanext_samples.SAMPLE2_PE.path.sort()[1] ==~ "fastqc/iridanextexample2-.*-SAMPLE2_PE_2_fastqc.html"
+            assert iridanext_samples.SAMPLE3_SE.path[0] ==~ "fastqc/iridanextexample2-.*-SAMPLE3_SE_fastqc.html"
+            assert iridanext_samples.SAMPLE4_SE.path[0] ==~ "fastqc/iridanextexample2-.*-SAMPLE4_SE_fastqc.html"
 
             assert iridanext_metadata.size() == 4
             assert iridanext_metadata.SAMPLE1_PE == ['id':'SAMPLE1_PE', 'single_end':'false']
