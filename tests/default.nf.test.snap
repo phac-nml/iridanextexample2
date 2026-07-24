@@ -31,6 +31,7 @@
                 "fastqc/SAMPLE3_SE_fastqc.zip",
                 "fastqc/SAMPLE4_SE_fastqc.html",
                 "fastqc/SAMPLE4_SE_fastqc.zip",
+                "iridanext.output.json",
                 "mergemetadata",
                 "mergemetadata/merged_metadata.csv",
                 "multiqc",
@@ -123,6 +124,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.0"
         },
-        "timestamp": "2026-07-24T11:13:41.434869694"
+        "timestamp": "2026-07-24T13:01:52.431645655"
     }
 }

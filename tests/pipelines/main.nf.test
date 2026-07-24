@@ -14,9 +14,9 @@ nextflow_pipeline {
         }
 
         then {
-            // Check that the iridanext output file does NOT exist
+            // Check that the iridanext output file exists
             def iridanextOutput = path("$outputDir/iridanext.output.json")
-            assert iridanextOutput.exists() == false
+            assert iridanextOutput.exists()
 
             // Assert Output Exists:
             assert path("$outputDir/fastqc/SAMPLE1_PE_1_fastqc.html").exists()
