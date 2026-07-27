@@ -120,10 +120,10 @@
                 "multiqc_general_stats.txt:md5,679de03cdb03fdad6cddc9c0cc7fe509"
             ]
         ],
-        "timestamp": "2026-02-13T13:17:08.842604162",
         "meta": {
-            "nf-test": "0.9.4",
-            "nextflow": "25.10.4"
-        }
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.0"
+        },
+        "timestamp": "2026-07-24T13:01:52.431645655"
     }
 }

@@ -43,6 +43,20 @@
                 }
             }
         },
+        "irida_next_parameters": {
+            "title": "IRIDA Next",
+            "type": "object",
+            "description": "Parameters for controlling IRIDA Next behaviour.",
+            "default": "",
+            "properties": {
+                "iridanext": {
+                    "type": "boolean",
+                    "description": "Whether or not to enable IRIDA Next-specific behaviour.",
+                    "default": true
+                }
+            },
+            "fa_icon": "far fa-clipboard"
+        },
         "irida_next_test_parameters": {
             "title": "IRIDA-Next Test Parameters",
             "type": "object",
@@ -276,6 +290,9 @@
     "allOf": [
         {
             "$ref": "#/$defs/input_output_options"
+        },
+        {
+            "$ref": "#/$defs/irida_next_parameters"
         },
         {
             "$ref": "#/$defs/irida_next_test_parameters"
