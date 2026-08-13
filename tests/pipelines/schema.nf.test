@@ -10,7 +10,7 @@ nextflow_pipeline {
         when {
             params {
                 input = "$baseDir/assets/samplesheet.csv"
-                outdir = "results"
+                outdir = "$outputDir"
             }
         }
 
