@@ -13,6 +13,12 @@ nextflow_pipeline {
         }
 
         then {
+            assert workflow.success
+            assert path("$outputDir").exists()
+
+            def combined_stdout = workflow.stdout.join(",")
+            assert combined_stdout.contains("JSON did not match schema") == false
+
             // Check that the iridanext output file exists and is gzipped
             def iridanextOutput = path("$outputDir/iridanext.output.json").json
 

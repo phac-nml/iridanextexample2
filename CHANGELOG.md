@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Set nextflow version 25.10.4 to replace 'latest-everything' to confirm compatibility with next IRIDA-Next nextflow version in `.github/workflows` for nf-test. [PR #17](https://github.com/phac-nml/iridanextexample2/pull/17)
 
+### Added
+
+- A iridanextexample2-specific JSON output schema that the nf-iridanext plugin will automatically validate its output against. Currently, this schema validation is only enabled during testing. [PR 20](https://github.com/phac-nml/iridanextexample2/pull/20)
+
 ## [0.1.3] - 2026-02-13
 
 ### `Updated`
