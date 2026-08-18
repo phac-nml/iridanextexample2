@@ -12,9 +12,9 @@
                     "type": "array",
                     "items": {
                         "properties": {
-                            "path": {},
-                            "additionalProperties": false
-                        }
+                            "path": {}
+                        },
+                        "additionalProperties": false
                     },
                     "uniqueItems": true
                 },
