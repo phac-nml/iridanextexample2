@@ -5,7 +5,7 @@ nextflow_pipeline {
     tag "pipeline"
 
     test("Check iridanext output: samplesheet.csv") {
-        tag "iridanext_output"
+        tag "iridanext_output_csv_input"
         when {
             params {
                 input  = "${projectDir}/assets/samplesheet.csv"
@@ -35,7 +35,7 @@ nextflow_pipeline {
     }
 
     test("Check iridanext output: samplesheet.json") {
-        tag "iridanext_output"
+        tag "iridanext_output_json_input"
         when {
             params {
                 input  = "${projectDir}/assets/samplesheet.json"
