@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### `Updated`
 
 - Set nextflow version 25.10.4 to replace 'latest-everything' to confirm compatibility with next IRIDA-Next nextflow version in `.github/workflows` for nf-test. [PR #17](https://github.com/phac-nml/iridanextexample2/pull/17)
+- Added support for JSON-formated sample sheets. [PR #18](https://github.com/phac-nml/iridanextexample2/pull/18)
 
 ## [0.1.3] - 2026-02-13
 
