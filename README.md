@@ -37,23 +37,23 @@ Alternatively, a JSON-formatted sample sheet may be provided:
 
 ```json
 [
-    {
-        "sample": "SAMPLE1_PE",
-        "metadata_1": "meta1",
-        "fastq_1": "sample1_R1.fastq.gz",
-        "fastq_2": "sample1_R2.fastq.gz"
-    },
-    {
-        "sample": "SAMPLE2_PE",
-        "metadata_1": "2",
-        "fastq_1": "sample2_R1.fastq.gz",
-        "fastq_2": "sample2_R2.fastq.gz"
-    },
-    {
-        "sample": "SAMPLE3_SE",
-        "metadata_1": "3.0",
-        "fastq_1": "sample3.fastq.gz"
-    }
+  {
+    "sample": "SAMPLE1_PE",
+    "metadata_1": "meta1",
+    "fastq_1": "sample1_R1.fastq.gz",
+    "fastq_2": "sample1_R2.fastq.gz"
+  },
+  {
+    "sample": "SAMPLE2_PE",
+    "metadata_1": "2",
+    "fastq_1": "sample2_R1.fastq.gz",
+    "fastq_2": "sample2_R2.fastq.gz"
+  },
+  {
+    "sample": "SAMPLE3_SE",
+    "metadata_1": "3.0",
+    "fastq_1": "sample3.fastq.gz"
+  }
 ]
 ```
 
