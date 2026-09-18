@@ -25,7 +25,7 @@ CONTROL_REP1,AEG588A1_S1_L004_R1_001.fastq.gz,AEG588A1_S1_L004_R2_001.fastq.gz
 
 ### Full sample sheet
 
-The pipeline will auto-detect whether a sample is single- or paired-end using the information provided in the sample sheet. If the provided sample sheet is in CSV format, then there is not limit to the number of columns in the sample sheet. However, the first three columns must match a specific format as defined in the table below.
+The pipeline will auto-detect whether a sample is single- or paired-end using the information provided in the sample sheet. If the provided sample sheet is in CSV format, then there is no limit to the number of columns in the sample sheet. However, the first three columns must match a specific format as defined in the table below.
 
 A final sample sheet file consisting of both single- and paired-end data may look something like the one below. This is for 6 samples, where `TREATMENT_REP3` has been sequenced twice.
 
@@ -72,7 +72,7 @@ If the provided sample sheet is in JSON format, then the JSON sample sheet must 
 | `fastq_2`     | Full path to FastQ file for Illumina short reads 2. File has to be gzipped and have the extension ".fastq.gz" or ".fq.gz". `[REQUIRED]` |
 |               |
 
-An [example sample sheet](../assets/samplesheet.csv) has been provided with the pipeline.
+An [example CSV sample sheet](../assets/samplesheet.csv) and an [example JSON sample sheet](../assets/samplesheet.json) have been provided with the pipeline.
 
 ## Running the pipeline
 
