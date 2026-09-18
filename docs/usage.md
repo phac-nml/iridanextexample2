@@ -4,12 +4,12 @@
 
 This pipeline is an example that illustrates running a nf-core-compliant pipeline on IRIDA Next and migrating from nf-validation used in iridanextexample to nf-schema used in this pipeline. The pipeline was built using [nf-core v.3.3.2](https://nf-co.re/docs/guidelines/pipelines/requirements/use_the_template) `nf-core pipelines create`, and modified to be IRIDA-Next compliant.
 
-## Samplesheet input
+## Sample sheet input
 
-You will need to create a samplesheet with information about the samples you would like to analyse before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with at least 3 columns, and a header row as shown in the examples below.
+You will need to create a sample sheet with information about the samples you would like to analyze before running the pipeline. Use the `input` parameter to specify the file location of the input sample sheet. It must either be a CSV-formatted or JSON-formatted file containing the specific metadata fields and formatting as described below.
 
 ```bash
---input '[path to samplesheet file]'
+--input '[path to sample sheet file]'
 ```
 
 ### Multiple runs of the same sample
@@ -23,11 +23,11 @@ CONTROL_REP1,AEG588A1_S1_L003_R1_001.fastq.gz,AEG588A1_S1_L003_R2_001.fastq.gz
 CONTROL_REP1,AEG588A1_S1_L004_R1_001.fastq.gz,AEG588A1_S1_L004_R2_001.fastq.gz
 ```
 
-### Full samplesheet
+### Full sample sheet
 
-The pipeline will auto-detect whether a sample is single- or paired-end using the information provided in the samplesheet. The samplesheet can have as many columns as you desire, however, there is a strict requirement for the first 3 columns to match those defined in the table below.
+The pipeline will auto-detect whether a sample is single- or paired-end using the information provided in the sample sheet. If the provided sample sheet is in CSV format, then there is no limit to the number of columns in the sample sheet. However, the first three columns must match a specific format as defined in the table below.
 
-A final samplesheet file consisting of both single- and paired-end data may look something like the one below. This is for 6 samples, where `TREATMENT_REP3` has been sequenced twice.
+A final sample sheet file consisting of both single- and paired-end data may look something like the one below. This is for 6 samples, where `TREATMENT_REP3` has been sequenced twice.
 
 ```csv title="samplesheet.csv"
 sample,fastq_1,fastq_2
@@ -40,6 +40,30 @@ TREATMENT_REP3,AEG588A6_S6_L003_R1_001.fastq.gz,
 TREATMENT_REP3,AEG588A6_S6_L004_R1_001.fastq.gz,
 ```
 
+If the provided sample sheet is in JSON format, then the JSON sample sheet must be an array of objects with each object containing the `sample`, `metadata_1`, `fastq_1`, and `fastq_2` fields, as illustrated below.
+
+```
+[
+    {
+        "sample": "SAMPLE1_PE",
+        "metadata_1": "meta1",
+        "fastq_1": "sample1_R1.fastq.gz",
+        "fastq_2": "sample1_R2.fastq.gz"
+    },
+    {
+        "sample": "SAMPLE2_PE",
+        "metadata_1": "2",
+        "fastq_1": "sample2_R1.fastq.gz",
+        "fastq_2": "sample2_R2.fastq.gz"
+    },
+    {
+        "sample": "SAMPLE3_SE",
+        "metadata_1": "3.0",
+        "fastq_1": "sample3.fastq.gz"
+    }
+]
+```
+
 | Column        | Description                                                                                                                             |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `sample`      | Unique sample identifier used in IRIDA-Next as the PUID `[REQUIRED]`                                                                    |
@@ -48,7 +72,7 @@ TREATMENT_REP3,AEG588A6_S6_L004_R1_001.fastq.gz,
 | `fastq_2`     | Full path to FastQ file for Illumina short reads 2. File has to be gzipped and have the extension ".fastq.gz" or ".fq.gz". `[REQUIRED]` |
 |               |
 
-An [example samplesheet](../assets/samplesheet.csv) has been provided with the pipeline.
+An [example CSV sample sheet](../assets/samplesheet.csv) and an [example JSON sample sheet](../assets/samplesheet.json) have been provided with the pipeline.
 
 ## Running the pipeline
 
