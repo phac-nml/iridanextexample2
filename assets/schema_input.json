@@ -24,7 +24,7 @@
                 "meta": ["metadata_1"],
                 "errorMessage": "Metadata associated with the sample (metadata_1).",
                 "default": "",
-                "pattern": "^[^\\n\\t\"]+$"
+                "pattern": "^[^\\n\\t\"]*$"
             },
             "fastq_1": {
                 "type": "string",
