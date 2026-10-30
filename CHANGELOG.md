@@ -3,6 +3,17 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4] - 2026-10-30
+
+### Updated
+
+- Set nextflow version 25.10.4 to replace 'latest-everything' to confirm compatibility with next IRIDA-Next nextflow version in `.github/workflows` for nf-test. [PR #17](https://github.com/phac-nml/iridanextexample2/pull/17)
+- Added support for JSON-formated sample sheets. [PR #18](https://github.com/phac-nml/iridanextexample2/pull/18)
+
+### Added
+
+- A iridanextexample2-specific JSON output schema that the nf-iridanext plugin will automatically validate its output against. Currently, this schema validation is only enabled during testing. [PR 20](https://github.com/phac-nml/iridanextexample2/pull/20)
+
 ## [0.1.3] - 2026-02-13
 
 ### `Updated`
@@ -58,3 +69,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.1.1]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.1
 [0.1.2]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.2
 [0.1.3]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.3
+[0.1.4]: https://github.com/phac-nml/iridanextexample2/releases/tag/0.1.4

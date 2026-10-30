@@ -1,0 +1,24 @@
+[
+    {
+        "sample": "SAMPLE1_PE",
+        "metadata_1": "meta1",
+        "fastq_1": "https://raw.githubusercontent.com/nf-core/test-datasets/viralrecon/illumina/amplicon/sample1_R1.fastq.gz",
+        "fastq_2": "https://raw.githubusercontent.com/nf-core/test-datasets/viralrecon/illumina/amplicon/sample1_R2.fastq.gz"
+    },
+    {
+        "sample": "SAMPLE2_PE",
+        "metadata_1": "2",
+        "fastq_1": "https://raw.githubusercontent.com/nf-core/test-datasets/viralrecon/illumina/amplicon/sample2_R1.fastq.gz",
+        "fastq_2": "https://raw.githubusercontent.com/nf-core/test-datasets/viralrecon/illumina/amplicon/sample2_R2.fastq.gz"
+    },
+    {
+        "sample": "SAMPLE3_SE",
+        "metadata_1": "3.0",
+        "fastq_1": "https://raw.githubusercontent.com/nf-core/test-datasets/viralrecon/illumina/amplicon/sample1_R1.fastq.gz"
+    },
+    {
+        "sample": "SAMPLE4_SE",
+        "metadata_1": "true",
+        "fastq_1": "https://raw.githubusercontent.com/nf-core/test-datasets/viralrecon/illumina/amplicon/sample2_R1.fastq.gz"
+    }
+]
